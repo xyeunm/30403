@@ -1,4 +1,11 @@
+import base64
+from pathlib import Path
+
 import streamlit as st
+
+portrait_image = base64.b64encode(
+    (Path(__file__).parent / 'ing' / 'IMG_3240.jpeg').read_bytes()
+).decode('ascii')
 
 st.set_page_config(
     page_title='김하은 | 나를 소개합니다',
@@ -57,6 +64,7 @@ st.markdown(
         border-radius:10px; background:rgba(255,255,255,.82); color:#58436f;
         font-family:'Outfit',sans-serif; font-weight:700;
     }
+    .closing-kuromi { display:inline-block; margin-left:.35rem; font-size:.85rem; vertical-align:middle; }
     .section-head {
         display:flex; align-items:end; justify-content:space-between; gap:1rem;
         margin:2.2rem 0 1.1rem; padding-bottom:.8rem; border-bottom:1px solid var(--line);
@@ -106,8 +114,8 @@ st.markdown(
         <div class="hero-tags"><span>경복비즈니스학교</span><span>IT과 3학년</span><span>정보보안</span></div>
       </div>
       <div class="portrait">
-        <img src="https://www.sanrio.co.jp/wp-content/uploads/2022/06/list-kuromi.png" alt="쿠로미 공식 캐릭터 이미지" />
-        <span class="portrait-label">♡ Kuromi fan</span>
+                <img src="data:image/jpeg;base64,IMAGE_DATA" alt="김하은 사진" />
+                <span class="portrait-label">♡ HAEUN</span>
       </div>
     </section>
 
@@ -130,7 +138,7 @@ st.markdown(
 
     <div class="section-head"><h2>Things I like</h2><p>하은이를 기분 좋게 만드는 것들</p></div>
     <div class="interests"><span class="interest">친구들과 통화하기</span><span class="interest">OTT 시청하기</span><span class="interest">쿠로미</span><span class="interest">IT와 정보보안 알아가기</span></div>
-    <div class="closing"><strong>“꾸준히 배우고, 직접 도전하며, 신뢰받는 보안 전문가로 성장하기.”</strong><br />저의 꿈을 향해 오늘도 한 걸음씩 나아가고 있습니다. 반가워요!</div>
-    """,
+    <div class="closing"><strong>“꾸준히 배우고, 직접 도전하며, 신뢰받는 보안 전문가로 성장하기.”</strong><span class="closing-kuromi" aria-label="쿠로미">😈💜</span><br />저의 꿈을 향해 오늘도 한 걸음씩 나아가고 있습니다. 반가워요!</div>
+    """.replace('IMAGE_DATA', portrait_image),
     unsafe_allow_html=True,
 )
