@@ -1,27 +1,33 @@
 (() => {
   const siteUrl = document.getElementById('site-url');
-  const githubRow = document.getElementById('github-row');
-  const githubLink = document.getElementById('github-link');
   const backToTop = document.querySelector('.back-to-top');
 
-  siteUrl.href = `${window.location.origin}${window.location.pathname}`;
-  siteUrl.textContent = siteUrl.href;
-
-  // Set this URL directly when deploying through a custom domain or another host.
-  const repositoryUrl = '';
-  let inferredRepositoryUrl = '';
-  if (window.location.hostname.endsWith('.github.io')) {
-    const owner = window.location.hostname.split('.')[0];
-    const repository = decodeURIComponent(window.location.pathname.split('/').filter(Boolean)[0] || `${owner}.github.io`);
-    inferredRepositoryUrl = `https://github.com/${owner}/${repository}`;
-  }
-  const resolvedRepositoryUrl = repositoryUrl || inferredRepositoryUrl;
-  if (resolvedRepositoryUrl) {
-    githubLink.href = resolvedRepositoryUrl;
-    githubRow.hidden = false;
+  if (siteUrl) {
+    siteUrl.href = window.location.href.split('#')[0];
+    siteUrl.textContent = siteUrl.href;
   }
 
-  const updateBackToTop = () => backToTop.classList.toggle('is-hidden', window.scrollY < 360);
+  const updateBackToTop = () => {
+    if (backToTop) backToTop.classList.toggle('is-hidden', window.scrollY < 360);
+  };
   window.addEventListener('scroll', updateBackToTop, { passive: true });
   updateBackToTop();
+
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const revealItems = document.querySelectorAll(
+    '.section-heading, .info-card, .strength-card, .growth-note, .experience-card, .kindness-card, .activity-feature, .tech-card, .award-card, .education-card, .quote-grid blockquote'
+  );
+  revealItems.forEach((item) => item.classList.add('reveal'));
+  document.body.classList.add('reveal-ready');
+
+  const observer = new IntersectionObserver((entries, currentObserver) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      currentObserver.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -24px 0px' });
+
+  revealItems.forEach((item) => observer.observe(item));
 })();
