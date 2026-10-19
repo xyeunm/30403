@@ -12,11 +12,13 @@ python3 -m http.server 8000
 
 ## GitHub Pages 배포
 
-1. 변경 사항을 GitHub 저장소의 기본 브랜치에 push합니다.
-2. 저장소의 **Settings > Pages**로 이동합니다.
-3. **Build and deployment**의 Source에서 **Deploy from a branch**를 선택합니다.
-4. 기본 브랜치(예: `main`)와 폴더 **/(root)**를 선택하고 **Save**를 누릅니다.
-5. Pages 설정 화면에 표시되는 배포 상태와 URL을 확인합니다. 이 저장소의 예상 주소는 `https://xyeunm.github.io/30403/`입니다. Pages 설정을 완료하고 배포가 성공한 뒤 접속할 수 있습니다.
+이 저장소에는 `index.html`, `styles.css`, `script.js`만 배포하는 GitHub Actions 워크플로가 있습니다. Streamlit 앱과 데이터 파일은 Pages 배포물에 포함되지 않습니다.
+
+1. 변경 사항과 `.github/workflows/deploy-pages.yml`을 기본 브랜치 `main`에 push합니다.
+2. GitHub 저장소의 **Settings > Pages**로 이동합니다.
+3. **Build and deployment**의 Source에서 **GitHub Actions**를 선택합니다.
+4. **Actions** 탭에서 **Deploy portfolio to GitHub Pages** 실행이 완료됐는지 확인합니다. 최초 설정 후 workflow 실행이 시작되지 않으면 해당 워크플로에서 **Run workflow**를 실행합니다.
+5. 배포 완료 후 `https://xyeunm.github.io/30403/`에 접속합니다. 이 주소는 Pages 배포가 성공한 뒤 사용할 수 있습니다.
 6. 배포된 URL을 QR 코드 생성 도구에 입력합니다. 공개 배포 전에 연락처와 공개 정보를 확인하세요.
 
 `index.html`, `styles.css`, `script.js`는 저장소 루트에 있어야 합니다. 웹사이트 주소는 접속한 배포 위치에서 자동으로 표시됩니다. GitHub 저장소 주소는 `github.io` 주소에서 자동 추정합니다. 사용자 도메인 등 다른 호스트를 쓸 때는 `script.js`의 `repositoryUrl` 값에 저장소 URL을 입력하세요.
