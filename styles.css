@@ -33,7 +33,7 @@ h1, h2, h3, h4, p, blockquote { margin-top: 0; }
 .primary-nav a { padding: 8px 0; color: #625d69; font-size: 12px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: color .2s ease; }
 .primary-nav a:hover, .text-link:hover { color: var(--purple); }
 .hero { position: relative; display: grid; min-height: 610px; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 70px; padding-block: 78px 104px; isolation: isolate; }
-.hero::before { position: absolute; z-index: -1; top: 0; right: calc((min(100vw, 1440px) - 100%) / -2); bottom: 0; left: calc((min(100vw, 1440px) - 100%) / -2); background: radial-gradient(ellipse at 12% 15%, rgba(255,255,255,.9), transparent 36%), radial-gradient(ellipse at 83% 85%, rgba(217,236,250,.76), transparent 31%), linear-gradient(125deg, #f2eafa 0%, #e9ddf8 48%, #f8f4fc 100%); content: ""; }
+.hero::before { position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: radial-gradient(ellipse at 12% 15%, rgba(255,255,255,.9), transparent 36%), radial-gradient(ellipse at 83% 85%, rgba(217,236,250,.76), transparent 31%), linear-gradient(125deg, #f2eafa 0%, #e9ddf8 48%, #f8f4fc 100%); content: ""; }
 .hero-copy { max-width: 625px; animation: rise-in .55s ease-out both; }
 .eyebrow, .section-kicker { margin-bottom: 14px; color: var(--purple); font: 800 11px "Trebuchet MS", sans-serif; letter-spacing: .13em; }
 .eyebrow { display: flex; align-items: center; gap: 9px; }
@@ -198,7 +198,6 @@ h1 span { color: var(--purple-dark); }
   .primary-nav { width: 100%; flex-wrap: nowrap; justify-content: flex-start; gap: 19px; overflow-x: auto; padding: 3px 0 7px; scrollbar-width: thin; }
   .primary-nav a { font-size: 11px; }
   .hero { min-height: 0; grid-template-columns: 1fr; gap: 28px; padding-block: 50px 76px; }
-  .hero::before { right: -18px; left: -18px; }
   h1 { font-size: 47px; }
   .hero-lead { font-size: 15px; }
   .hero-card { width: 100%; max-width: none; justify-self: stretch; padding: 28px 25px 20px; border-radius: 23px; }
@@ -245,7 +244,7 @@ h1 span { color: var(--purple-dark); }
   .site-header, .hero-actions, .back-to-top, .skip-link { display: none !important; }
   .section-wrap { width: 100%; }
   .hero { min-height: 0; grid-template-columns: 1.1fr .9fr; gap: 20px; padding-block: 8px 26px; }
-  .hero::before { right: 0; left: 0; }
+  .hero::before { right: 0; left: 0; width: 100%; transform: none; }
   .hero-bottom, .decor { display: none; }
   .hero-card, .info-card, .strength-card, .experience-card, .activity-feature, .club-card, .tech-card, .award-card, .education-card, .quote-grid blockquote, .contact-details { break-inside: avoid; box-shadow: none; }
   .content-section, .growth-section, .contact-section { padding-block: 24px; }
