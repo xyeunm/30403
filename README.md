@@ -10,6 +10,8 @@
 python3 -m http.server 8000
 ```
 
+개발 컨테이너에서는 Streamlit 앱이 포트 `8000`에서 자동으로 실행되며, 해당 포트가 미리보기로 전달됩니다. 정적 사이트 서버와 Streamlit 앱을 동시에 실행하면 포트가 겹치므로 둘 중 하나만 실행하세요.
+
 ## GitHub Pages 배포
 
 `.github/workflows/deploy-pages.yml`은 `index.html`, `styles.css`, `script.js`, `favicon.svg`만 Pages 배포물에 넣습니다. 저장소에 포함된 Streamlit 앱이나 데이터 파일은 공개 사이트에 배포하지 않습니다.
