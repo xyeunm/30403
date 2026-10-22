@@ -1,6 +1,10 @@
 (() => {
   const siteUrl = document.getElementById('site-url');
   const backToTop = document.querySelector('.back-to-top');
+  const navLinks = [...document.querySelectorAll('.primary-nav a[href^="#"]')];
+  const sections = navLinks
+    .map((link) => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
 
   if (siteUrl) {
     siteUrl.href = window.location.href.split('#')[0];
@@ -10,8 +14,26 @@
   const updateBackToTop = () => {
     if (backToTop) backToTop.classList.toggle('is-hidden', window.scrollY < 360);
   };
-  window.addEventListener('scroll', updateBackToTop, { passive: true });
+
+  const updateActiveNav = () => {
+    let activeSection = sections[0];
+    const marker = window.scrollY + 160;
+
+    sections.forEach((section) => {
+      if (section.offsetTop <= marker) activeSection = section;
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.toggle('is-active', link.getAttribute('href') === `#${activeSection.id}`);
+    });
+  };
+
+  window.addEventListener('scroll', () => {
+    updateBackToTop();
+    updateActiveNav();
+  }, { passive: true });
   updateBackToTop();
+  updateActiveNav();
 
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 

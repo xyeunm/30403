@@ -31,7 +31,8 @@ h1, h2, h3, h4, p, blockquote { margin-top: 0; }
 .wordmark span { margin-left: 4px; color: #ac83c9; }
 .primary-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 20px; }
 .primary-nav a { padding: 8px 0; color: #625d69; font-size: 12px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: color .2s ease; }
-.primary-nav a:hover, .text-link:hover { color: var(--purple); }
+.primary-nav a:hover, .primary-nav a.is-active, .text-link:hover { color: var(--purple); }
+.primary-nav a.is-active { border-bottom: 2px solid #9a77bb; }
 .hero { position: relative; display: grid; min-height: 610px; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 70px; padding-block: 78px 104px; isolation: isolate; }
 .hero::before { position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: radial-gradient(ellipse at 12% 15%, rgba(255,255,255,.9), transparent 36%), radial-gradient(ellipse at 83% 85%, rgba(217,236,250,.76), transparent 31%), linear-gradient(125deg, #f2eafa 0%, #e9ddf8 48%, #f8f4fc 100%); content: ""; }
 .hero-copy { max-width: 625px; animation: rise-in .55s ease-out both; }
@@ -154,11 +155,6 @@ h1 span { color: var(--purple-dark); }
 .education-card .mini-label { margin: 0 0 5px; }
 .education-card h3 { margin: 0 0 4px; font-size: 15px; line-height: 1.6; }
 .education-card p:last-child { margin: 0; color: var(--muted); font-size: 12px; }
-.growth-section { padding-block: 86px; background: linear-gradient(135deg, #f5edfc, #eff8fd); }
-.quote-grid { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 12px; }
-.quote-grid blockquote { grid-column: span 2; display: flex; min-height: 120px; align-items: center; margin-bottom: 0; padding: 21px; border: 1px solid rgba(255,255,255,.9); border-radius: 18px; background: rgba(255,255,255,.76); color: #554b60; font-size: 13px; font-weight: 650; line-height: 1.8; }
-.quote-grid blockquote:nth-child(4) { grid-column: 2 / span 2; }
-.quote-grid blockquote:nth-child(5) { grid-column: 4 / span 2; }
 .contact-section { display: grid; grid-template-columns: 1fr .9fr; gap: 65px; align-items: center; padding-block: 82px; }
 .contact-copy h2 { margin: 0 0 12px; }
 .contact-copy > p:not(.section-kicker) { max-width: 520px; margin-bottom: 21px; color: #625c68; font-size: 13px; line-height: 1.9; }
@@ -229,9 +225,6 @@ h1 span { color: var(--purple-dark); }
   .cert-strip span { width: 100%; margin: 0 0 2px; }
   .award-card { grid-template-columns: 57px 1fr; gap: 13px; padding: 19px; }
   .award-trophy { font-size: 25px; }
-  .quote-grid { grid-template-columns: 1fr; }
-  .quote-grid blockquote, .quote-grid blockquote:nth-child(4), .quote-grid blockquote:nth-child(5) { grid-column: auto; min-height: 82px; padding: 17px; }
-  .growth-section { padding-block: 65px; }
   .contact-section { gap: 29px; padding-block: 65px; }
   .contact-details { padding-inline: 15px; }
   .contact-details div { grid-template-columns: 74px 1fr; }
@@ -246,13 +239,11 @@ h1 span { color: var(--purple-dark); }
   .hero { min-height: 0; grid-template-columns: 1.1fr .9fr; gap: 20px; padding-block: 8px 26px; }
   .hero::before { right: 0; left: 0; width: 100%; transform: none; }
   .hero-bottom, .decor { display: none; }
-  .hero-card, .info-card, .strength-card, .experience-card, .activity-feature, .club-card, .tech-card, .award-card, .education-card, .quote-grid blockquote, .contact-details { break-inside: avoid; box-shadow: none; }
+  .hero-card, .info-card, .strength-card, .experience-card, .activity-feature, .club-card, .tech-card, .award-card, .education-card, .contact-details { break-inside: avoid; box-shadow: none; }
   .content-section, .growth-section, .contact-section { padding-block: 24px; }
-  .section-tint, .growth-section, .site-footer { background: #fff; }
+  .section-tint, .site-footer { background: #fff; }
   .experience-grid, .strength-grid, .tech-grid { gap: 7px; }
   .experience-card, .activity-feature, .award-card { padding: 13px; }
-  .quote-grid { grid-template-columns: repeat(2, 1fr); }
-  .quote-grid blockquote, .quote-grid blockquote:nth-child(4), .quote-grid blockquote:nth-child(5) { grid-column: auto; min-height: auto; }
   .contact-section { grid-template-columns: 1fr 1fr; gap: 20px; }
   a { color: #111; text-decoration: none; }
   .site-footer .section-wrap { min-height: 0; padding-block: 9px; }
