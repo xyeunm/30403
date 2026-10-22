@@ -15,9 +15,9 @@ python3 -m http.server 8000
 `.github/workflows/deploy-pages.yml`은 `index.html`, `styles.css`, `script.js`, `favicon.svg`만 Pages 배포물에 넣습니다. 저장소에 포함된 Streamlit 앱이나 데이터 파일은 공개 사이트에 배포하지 않습니다.
 
 1. 변경 사항을 저장소의 `main` 브랜치에 push합니다.
-2. GitHub 저장소의 **Settings > Pages**에서 **Build and deployment > Source**를 **GitHub Actions**로 설정합니다.
-3. **Actions** 탭에서 **Deploy portfolio to GitHub Pages** 워크플로가 성공적으로 끝났는지 확인합니다. 필요한 경우 **Run workflow**를 눌러 수동으로 실행할 수 있습니다.
-4. 이 저장소의 Pages 주소는 `https://xyeunm.github.io/30403/`입니다. 배포가 완료된 뒤 브라우저에서 열어 실제 공개 여부를 확인하세요. GitHub 저장소의 **Settings > Pages** 및 성공한 Actions 실행의 배포 URL에서도 사이트 주소를 확인할 수 있습니다.
+2. **Actions** 탭에서 **Deploy portfolio to GitHub Pages** 워크플로가 성공적으로 끝났는지 확인합니다. 워크플로에 Pages 활성화 권한을 설정했으므로, Pages가 아직 활성화되지 않았다면 첫 배포에서 GitHub Actions 방식으로 활성화를 시도합니다.
+3. 저장소 또는 조직 정책 때문에 자동 활성화가 허용되지 않으면 GitHub 저장소의 **Settings > Pages > Build and deployment > Source**에서 **GitHub Actions**를 선택한 뒤, 실패한 Actions 실행을 다시 실행합니다.
+4. 배포가 완료되면 저장소의 **Settings > Pages** 또는 성공한 Actions 실행에서 사이트 주소를 확인합니다. 이 저장소의 예상 주소는 `https://xyeunm.github.io/30403/`이며, 실제 공개 여부는 브라우저에서 열어 확인하세요.
 5. 사이트가 정상적으로 열린 것을 확인한 뒤 해당 URL로 QR 코드를 만들고 공유하세요.
 
 ## 내용 수정
