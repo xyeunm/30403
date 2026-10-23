@@ -15,14 +15,14 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="wordmark" href="#home" aria-label="김하은 포트폴리오 첫 화면">HAEUN</a>
-      <nav class="primary-nav" aria-label="주요 메뉴">
-        <a href="#about">About Me</a>
-        <a href="#experience">Experience</a>
-        <a href="#activities">Activities</a>
-        <a href="#skills">Skills</a>
-        <a href="#awards">Awards</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
+      <nav class="primary-nav" role="tablist" aria-label="포트폴리오 탭">
+        <a href="#about" role="tab" aria-controls="about">About Me</a>
+        <a href="#experience" role="tab" aria-controls="experience">Experience</a>
+        <a href="#activities" role="tab" aria-controls="activities">Activities</a>
+        <a href="#skills" role="tab" aria-controls="skills">Skills</a>
+        <a href="#awards" role="tab" aria-controls="awards">Awards</a>
+        <a href="#education" role="tab" aria-controls="education">Education</a>
+        <a href="#contact" role="tab" aria-controls="contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -55,7 +55,7 @@
       <div class="hero-bottom" aria-hidden="true"><span>PERSONAL PORTFOLIO</span><span>CAREER PROFILE</span></div>
     </section>
 
-    <section class="content-section section-wrap" id="about" aria-labelledby="about-title">
+    <section class="content-section section-wrap tab-panel" id="about" role="tabpanel" aria-labelledby="about-title">
       <div class="section-heading">
         <p class="section-kicker">01 / ABOUT ME</p>
         <h2 id="about-title">자기소개</h2>
@@ -84,7 +84,7 @@
       </article>
     </section>
 
-    <section class="content-section section-tint" id="experience" aria-labelledby="experience-title">
+    <section class="content-section section-tint tab-panel" id="experience" role="tabpanel" aria-labelledby="experience-title">
       <div class="section-wrap">
         <div class="section-heading">
           <p class="section-kicker">02 / EXPERIENCE</p>
@@ -127,7 +127,7 @@
       </div>
     </section>
 
-    <section class="content-section section-wrap" id="activities" aria-labelledby="activities-title">
+    <section class="content-section section-wrap tab-panel" id="activities" role="tabpanel" aria-labelledby="activities-title">
       <div class="section-heading">
         <p class="section-kicker">03 / ACTIVITIES</p>
         <h2 id="activities-title">학교 활동</h2>
@@ -155,7 +155,7 @@
       </article>
     </section>
 
-    <section class="content-section section-tint" id="skills" aria-labelledby="skills-title">
+    <section class="content-section section-tint tab-panel" id="skills" role="tabpanel" aria-labelledby="skills-title">
       <div class="section-wrap">
         <div class="section-heading">
           <p class="section-kicker">04 / SKILLS</p>
@@ -179,7 +179,7 @@
       </div>
     </section>
 
-    <section class="content-section section-wrap" id="awards" aria-labelledby="awards-title">
+    <section class="content-section section-wrap tab-panel" id="awards" role="tabpanel" aria-labelledby="awards-title">
       <div class="section-heading">
         <p class="section-kicker">05 / AWARDS</p>
         <h2 id="awards-title">수상 및 대외 활동</h2>
@@ -197,7 +197,7 @@
       </div>
     </section>
 
-    <section class="content-section section-tint" id="education" aria-labelledby="education-title">
+    <section class="content-section section-tint tab-panel" id="education" role="tabpanel" aria-labelledby="education-title">
       <div class="section-wrap">
         <div class="section-heading">
           <p class="section-kicker">06 / EDUCATION</p>
@@ -211,7 +211,7 @@
       </div>
     </section>
 
-    <section class="contact-section section-wrap" id="contact" aria-labelledby="contact-title">
+    <section class="contact-section section-wrap tab-panel" id="contact" role="tabpanel" aria-labelledby="contact-title">
       <div class="contact-copy">
         <p class="section-kicker">08 / CONTACT</p>
         <h2 id="contact-title">새로운 도전을<br>함께 시작해요.</h2>

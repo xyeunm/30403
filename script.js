@@ -2,7 +2,7 @@
   const siteUrl = document.getElementById('site-url');
   const backToTop = document.querySelector('.back-to-top');
   const navLinks = [...document.querySelectorAll('.primary-nav a[href^="#"]')];
-  const sections = navLinks
+  const tabPanels = navLinks
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
 
@@ -15,25 +15,51 @@
     if (backToTop) backToTop.classList.toggle('is-hidden', window.scrollY < 360);
   };
 
-  const updateActiveNav = () => {
-    let activeSection = sections[0];
-    const marker = window.scrollY + 160;
+  const activateTab = (id, updateHistory = false) => {
+    const activePanel = tabPanels.find((panel) => panel.id === id);
 
-    sections.forEach((section) => {
-      if (section.offsetTop <= marker) activeSection = section;
+    tabPanels.forEach((panel) => {
+      const isActive = panel === activePanel;
+      panel.hidden = !isActive;
     });
 
     navLinks.forEach((link) => {
-      link.classList.toggle('is-active', link.getAttribute('href') === `#${activeSection.id}`);
+      const isActive = link.getAttribute('href') === `#${id}`;
+      link.classList.toggle('is-active', isActive);
+      link.setAttribute('aria-selected', String(isActive));
+      link.tabIndex = isActive ? 0 : -1;
     });
+
+    if (updateHistory) history.replaceState(null, '', `#${id}`);
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
-  window.addEventListener('scroll', () => {
-    updateBackToTop();
-    updateActiveNav();
-  }, { passive: true });
+  navLinks.forEach((link, index) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      activateTab(link.getAttribute('href').slice(1), true);
+    });
+    link.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+      event.preventDefault();
+      const offset = event.key === 'ArrowRight' ? 1 : -1;
+      const nextLink = navLinks[(index + offset + navLinks.length) % navLinks.length];
+      nextLink.focus();
+      activateTab(nextLink.getAttribute('href').slice(1), true);
+    });
+  });
+
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  window.addEventListener('hashchange', () => {
+    const targetId = location.hash.slice(1);
+    if (tabPanels.some((panel) => panel.id === targetId)) activateTab(targetId);
+  });
+
   updateBackToTop();
-  updateActiveNav();
+  const initialId = tabPanels.some((panel) => panel.id === location.hash.slice(1))
+    ? location.hash.slice(1)
+    : 'about';
+  activateTab(initialId);
 
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
