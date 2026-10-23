@@ -1,9 +1,12 @@
+import base64
 from pathlib import Path
 
 import streamlit as st
 
 APP_DIR = Path(__file__).parent
 html = (APP_DIR / "index.html").read_text(encoding="utf-8")
+profile_image = base64.b64encode((APP_DIR / "ing" / "IMG_3586.jpeg").read_bytes()).decode("ascii")
+html = html.replace("ing/IMG_3586.jpeg", f"data:image/jpeg;base64,{profile_image}")
 styles = (APP_DIR / "styles.css").read_text(encoding="utf-8")
 script = (APP_DIR / "script.js").read_text(encoding="utf-8")
 
