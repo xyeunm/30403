@@ -211,6 +211,40 @@ h1 span { color: var(--purple-dark); }
 .contact-copy > p:not(.section-kicker) { font-size: 16px; line-height: 1.7; }
 .contact-details dt, .contact-details dd { font-size: 15px; }
 
+.story-wrap { max-width: 980px; }
+.story-heading { margin-bottom: 52px; text-align: center; }
+.story-chapter { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 36px; margin-bottom: 24px; padding: 34px; border: 1px solid #e7dfed; border-radius: 8px; background: #fff; }
+.story-chapter-heading { align-self: start; padding-right: 28px; border-right: 1px solid #eee8f2; }
+.story-chapter-heading span { display: block; margin-bottom: 10px; color: #9474ae; font: 800 11px "Trebuchet MS", sans-serif; letter-spacing: .12em; }
+.story-chapter-heading h3 { margin: 0; font-size: 23px; line-height: 1.45; }
+.story-chapter-content { min-width: 0; }
+.story-chapter-content > p { color: #514d59; font-size: 16px; line-height: 1.9; }
+.story-chapter-content > p:last-child { margin-bottom: 0; }
+.story-keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.story-keywords span { padding: 7px 12px; border: 1px solid #dfd1e9; border-radius: 999px; background: #f8f3fb; color: #624783; font-size: 13px; font-weight: 750; }
+.story-topic-list { display: grid; gap: 23px; }
+.story-topic-list section { padding-bottom: 22px; border-bottom: 1px solid #eeeaf1; }
+.story-topic-list section:last-child { padding-bottom: 0; border-bottom: 0; }
+.story-topic-list h4 { margin: 0 0 8px; color: #60477a; font-size: 18px; line-height: 1.55; }
+.story-topic-list p { margin: 0 0 10px; color: #514d59; font-size: 16px; line-height: 1.85; }
+.story-topic-list p:last-child { margin-bottom: 0; }
+.story-lesson { padding: 14px 16px; border-left: 3px solid #b99bcf; background: #faf7fc; }
+.story-lesson strong { display: block; margin-bottom: 3px; color: #694d83; }
+.story-detail-grid ul { margin: 10px 0 14px; padding: 18px 18px 18px 38px; border-radius: 8px; background: #f7faff; color: #514d59; font-size: 15px; }
+.story-detail-grid li + li { margin-top: 5px; }
+.story-direction-list { margin: 20px 0; padding: 22px 22px 22px 44px; border: 1px solid #e3dcec; border-radius: 8px; background: #faf7fc; color: #514d59; }
+.story-direction-list li { padding: 4px 0 4px 4px; }
+.story-profile-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.story-profile-grid section { padding: 17px; border: 1px solid #ece5f1; border-radius: 8px; background: #fdfcff; }
+.story-profile-grid h4 { margin: 0 0 7px; color: #60477a; font-size: 15px; }
+.story-profile-grid p { margin: 0; color: #514d59; font-size: 15px; line-height: 1.75; }
+.story-profile-wide { grid-column: 1 / -1; }
+.story-weekly { margin-top: 38px; padding: 34px; border: 1px solid #dbe7f0; border-radius: 8px; background: linear-gradient(135deg, #fff, #f5fbff); }
+.story-weekly h3 { margin: 0 0 18px; font-size: 24px; }
+.story-weekly ol { margin: 0 0 22px; padding: 20px 20px 20px 42px; border-radius: 8px; background: #fff; color: #514d59; }
+.story-weekly li { padding: 5px 0; }
+.story-weekly > p:last-child { margin: 0; color: #625c68; font-size: 15px; line-height: 1.8; }
+
 @media (max-width: 900px) {
   .header-inner { min-height: 67px; flex-wrap: wrap; gap: 0 18px; padding-block: 8px; }
   .primary-nav { justify-content: flex-start; gap: 0 17px; }
@@ -228,6 +262,15 @@ h1 span { color: var(--purple-dark); }
   .wordmark { padding-block: 4px; }
   .primary-nav { width: 100%; flex-wrap: nowrap; justify-content: flex-start; gap: 19px; overflow-x: auto; padding: 3px 0 7px; scrollbar-width: thin; }
   .primary-nav a { font-size: 13px; }
+  .story-wrap { max-width: none; }
+  .story-heading { margin-bottom: 30px; }
+  .story-chapter { grid-template-columns: 1fr; gap: 22px; padding: 22px; }
+  .story-chapter-heading { padding: 0 0 17px; border-right: 0; border-bottom: 1px solid #eee8f2; }
+  .story-chapter-heading h3 { font-size: 20px; }
+  .story-chapter-content > p, .story-topic-list p { font-size: 15px; }
+  .story-profile-grid { grid-template-columns: 1fr; }
+  .story-profile-wide { grid-column: auto; }
+  .story-weekly { padding: 22px; }
   .hero { min-height: 0; grid-template-columns: 1fr; gap: 28px; padding-block: 50px 76px; }
   h1 { font-size: 47px; }
   .hero-lead { font-size: 17px; }

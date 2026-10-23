@@ -64,7 +64,7 @@
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const revealItems = document.querySelectorAll(
-    '.section-heading, .info-card, .strength-card, .growth-note, .experience-card, .kindness-card, .activity-feature, .tech-card, .award-card, .education-card, .quote-grid blockquote'
+    '.section-heading, .info-card, .strength-card, .growth-note, .experience-card, .kindness-card, .activity-feature, .tech-card, .award-card, .education-card, .story-chapter, .story-weekly'
   );
   revealItems.forEach((item) => item.classList.add('reveal'));
   document.body.classList.add('reveal-ready');
