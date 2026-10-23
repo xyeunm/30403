@@ -4,7 +4,7 @@
   --lavender-deep: #d8c7f0;
   --sky: #d9ecfa;
   --ink: #292633;
-  --muted: #77727f;
+  --muted: #625e69;
   --paper: #fff;
   --wash: #f3f1f6;
   --line: #ebe6f0;
@@ -18,7 +18,7 @@
   scroll-padding-top: 88px;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.75; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-size: 18px; line-height: 1.72; }
 a { color: inherit; }
 a:focus-visible { outline: 3px solid #8b6bb2; outline-offset: 4px; }
 h1, h2, h3, h4, p, blockquote { margin-top: 0; }
@@ -30,7 +30,7 @@ h1, h2, h3, h4, p, blockquote { margin-top: 0; }
 .wordmark { flex: 0 0 auto; color: var(--ink); font: 800 15px "Trebuchet MS", sans-serif; letter-spacing: .09em; text-decoration: none; }
 .wordmark span { margin-left: 4px; color: #ac83c9; }
 .primary-nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 20px; }
-.primary-nav a { padding: 8px 0; color: #625d69; font-size: 12px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: color .2s ease; }
+  .primary-nav a { padding: 8px 0; color: #625d69; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: color .2s ease; }
 .primary-nav a:hover, .primary-nav a.is-active, .text-link:hover { color: var(--purple); }
 .primary-nav a.is-active { border-bottom: 2px solid #9a77bb; }
 .hero { position: relative; display: grid; min-height: 610px; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 70px; padding-block: 78px 104px; isolation: isolate; }
@@ -41,7 +41,7 @@ h1, h2, h3, h4, p, blockquote { margin-top: 0; }
 .eyebrow-icon { font-size: 17px; }
 h1 { margin-bottom: 18px; font-size: clamp(44px, 5.5vw, 72px); font-weight: 800; letter-spacing: -.045em; line-height: 1.22; }
 h1 span { color: var(--purple-dark); }
-.hero-lead { max-width: 590px; margin-bottom: 23px; color: #514c59; font-size: 17px; font-weight: 550; line-height: 1.9; }
+  .hero-lead { max-width: 590px; margin-bottom: 23px; color: #514c59; font-size: 19px; font-weight: 550; line-height: 1.65; }
 .hero-tags { display: flex; max-width: 520px; flex-wrap: wrap; gap: 8px; }
 .hero-tags span { padding: 6px 12px; border: 1px solid rgba(255,255,255,.9); border-radius: 99px; background: rgba(255,255,255,.64); color: #5d4a72; font-size: 12px; font-weight: 700; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 29px; }
@@ -176,6 +176,40 @@ h1 span { color: var(--purple-dark); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+/* Keep the portfolio concise and readable for adult reviewers. */
+.primary-nav a { font-size: 14px; }
+.hero-lead { font-size: 19px; line-height: 1.65; }
+.hero-tags span, .button, .text-link { font-size: 15px; }
+.hero-card > p:not(.hero-card-kicker) { font-size: 16px; line-height: 1.65; }
+.section-intro { font-size: 16px; line-height: 1.65; }
+.info-card h3 { font-size: 21px; }
+.info-card p { font-size: 16px; line-height: 1.7; }
+.subsection-heading h3 { font-size: 22px; }
+.subsection-heading p { font-size: 15px; }
+.strength-card h4 { font-size: 18px; }
+.strength-card p { font-size: 16px; line-height: 1.65; }
+.growth-note h3, .kindness-card h3 { font-size: 18px; }
+.growth-note p, .kindness-card p:last-child { font-size: 16px; line-height: 1.65; }
+.card-meta { font-size: 12px; }
+.experience-card h3 { font-size: 23px; }
+.experience-summary { margin: 0 0 14px; color: #3f3946; font-size: 18px; font-weight: 700; line-height: 1.55; }
+.experience-block h4 { font-size: 15px; }
+.experience-block p, .experience-block li { font-size: 16px; line-height: 1.65; }
+.kindness-card { grid-template-columns: 1fr; }
+.activity-heading p:last-child { font-size: 16px; }
+.activity-details h4, .club-card h4 { font-size: 17px; }
+.activity-details ul, .club-card ul, .activity-takeaway p, .club-card p { font-size: 15px; line-height: 1.65; }
+.activity-outcome p { font-size: 15px; }
+.skill-tags span { font-size: 15px; }
+.tech-card h3 { font-size: 18px; }
+.tech-card p, .cert-strip span, .cert-strip strong { font-size: 15px; }
+.award-card h3 { font-size: 19px; }
+.award-card ul, .award-skills { font-size: 15px; }
+.education-card h3 { font-size: 18px; }
+.education-card p:last-child { font-size: 15px; }
+.contact-copy > p:not(.section-kicker) { font-size: 16px; line-height: 1.7; }
+.contact-details dt, .contact-details dd { font-size: 15px; }
+
 @media (max-width: 900px) {
   .header-inner { min-height: 67px; flex-wrap: wrap; gap: 0 18px; padding-block: 8px; }
   .primary-nav { justify-content: flex-start; gap: 0 17px; }
@@ -187,15 +221,15 @@ h1 span { color: var(--purple-dark); }
   .tech-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 640px) {
-  body { font-size: 15px; }
+  body { font-size: 17px; }
   .section-wrap, .header-inner { width: min(calc(100% - 36px), var(--content-width)); }
   .header-inner { align-items: flex-start; }
   .wordmark { padding-block: 4px; }
   .primary-nav { width: 100%; flex-wrap: nowrap; justify-content: flex-start; gap: 19px; overflow-x: auto; padding: 3px 0 7px; scrollbar-width: thin; }
-  .primary-nav a { font-size: 11px; }
+  .primary-nav a { font-size: 13px; }
   .hero { min-height: 0; grid-template-columns: 1fr; gap: 28px; padding-block: 50px 76px; }
   h1 { font-size: 47px; }
-  .hero-lead { font-size: 15px; }
+  .hero-lead { font-size: 17px; }
   .hero-card { width: 100%; max-width: none; justify-self: stretch; padding: 28px 25px 20px; border-radius: 23px; }
   .hero-profile { height: auto; margin-bottom: 20px; }
   .decor-star { top: 22px; right: 10%; }
@@ -204,7 +238,7 @@ h1 span { color: var(--purple-dark); }
   .content-section { padding-block: 65px; }
   .section-heading { margin-bottom: 26px; }
   .section-heading h2, .contact-copy h2 { font-size: 28px; }
-  .section-intro { font-size: 12px; }
+  .section-intro { font-size: 15px; }
   .about-grid, .experience-grid, .activity-details, .club-grid, .award-grid, .education-grid, .contact-section { grid-template-columns: 1fr; }
   .info-card, .activity-feature { padding: 22px; }
   .strength-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; }
