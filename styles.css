@@ -51,8 +51,8 @@ h1 span { color: var(--purple-dark); }
 .button-primary:hover { background: #51386f; }
 .text-link { color: var(--ink); font-size: 13px; font-weight: 750; text-decoration: none; }
 .hero-card { position: relative; max-width: 430px; justify-self: end; overflow: hidden; padding: 40px 34px 25px; border: 1px solid rgba(255,255,255,.9); border-radius: 28px; background: rgba(255,255,255,.77); box-shadow: 0 25px 65px rgba(93, 67, 120, .13); animation: rise-in .65s .1s ease-out both; }
-.hero-card::after { position: absolute; top: -78px; right: -54px; width: 210px; height: 210px; border-radius: 50%; background: linear-gradient(140deg, rgba(233,221,248,.9), rgba(217,236,250,.65)); content: ""; }
-.hero-card-orbit { position: relative; z-index: 1; display: grid; width: 58px; height: 58px; margin-bottom: 28px; place-items: center; border-radius: 20px; background: var(--lavender); font-size: 26px; }
+ .hero-card::after { position: absolute; top: -78px; right: -54px; width: 210px; height: 210px; border-radius: 50%; background: linear-gradient(140deg, rgba(233,221,248,.9), rgba(217,236,250,.65)); content: ""; }
+.hero-profile { position: relative; z-index: 1; display: block; width: 104px; height: 104px; margin-bottom: 24px; border: 5px solid rgba(255,255,255,.92); border-radius: 50%; box-shadow: 0 8px 24px rgba(70,53,90,.16); object-fit: cover; object-position: center 28%; }
 .hero-card-kicker, .mini-label { margin-bottom: 7px; color: var(--purple); font: 800 10px "Trebuchet MS", sans-serif; letter-spacing: .11em; }
 .hero-card h2 { margin-bottom: 13px; font-size: 27px; line-height: 1.48; }
 .hero-card > p:not(.hero-card-kicker) { margin-bottom: 26px; color: var(--muted); font-size: 13px; line-height: 1.9; }
@@ -197,7 +197,7 @@ h1 span { color: var(--purple-dark); }
   h1 { font-size: 47px; }
   .hero-lead { font-size: 15px; }
   .hero-card { width: 100%; max-width: none; justify-self: stretch; padding: 28px 25px 20px; border-radius: 23px; }
-  .hero-card-orbit { margin-bottom: 20px; }
+  .hero-profile { width: 92px; height: 92px; margin-bottom: 20px; }
   .decor-star { top: 22px; right: 10%; }
   .decor-sparkle { right: 1%; bottom: 84px; }
   .hero-bottom { bottom: 17px; }
