@@ -52,7 +52,7 @@ h1 span { color: var(--purple-dark); }
 .text-link { color: var(--ink); font-size: 13px; font-weight: 750; text-decoration: none; }
 .hero-card { position: relative; max-width: 430px; justify-self: end; overflow: hidden; padding: 40px 34px 25px; border: 1px solid rgba(255,255,255,.9); border-radius: 28px; background: rgba(255,255,255,.77); box-shadow: 0 25px 65px rgba(93, 67, 120, .13); animation: rise-in .65s .1s ease-out both; }
  .hero-card::after { position: absolute; top: -78px; right: -54px; width: 210px; height: 210px; border-radius: 50%; background: linear-gradient(140deg, rgba(233,221,248,.9), rgba(217,236,250,.65)); content: ""; }
-.hero-profile { position: relative; z-index: 1; display: block; width: 100%; height: 210px; margin: 0 0 22px; border: 1px solid rgba(255,255,255,.9); border-radius: 14px; box-shadow: 0 10px 28px rgba(70,53,90,.12); object-fit: cover; object-position: center 28%; }
+.hero-profile { position: relative; z-index: 1; display: block; width: 100%; height: auto; aspect-ratio: 787 / 1017; margin: 0 0 22px; border: 1px solid rgba(255,255,255,.9); border-radius: 14px; box-shadow: 0 10px 28px rgba(70,53,90,.12); object-fit: contain; }
 .hero-card-kicker, .mini-label { margin-bottom: 7px; color: var(--purple); font: 800 10px "Trebuchet MS", sans-serif; letter-spacing: .11em; }
 .hero-card h2 { margin-bottom: 13px; font-size: 27px; line-height: 1.48; }
 .hero-card > p:not(.hero-card-kicker) { margin-bottom: 26px; color: var(--muted); font-size: 13px; line-height: 1.9; }
@@ -197,7 +197,7 @@ h1 span { color: var(--purple-dark); }
   h1 { font-size: 47px; }
   .hero-lead { font-size: 15px; }
   .hero-card { width: 100%; max-width: none; justify-self: stretch; padding: 28px 25px 20px; border-radius: 23px; }
-  .hero-profile { height: 190px; margin-bottom: 20px; }
+  .hero-profile { height: auto; margin-bottom: 20px; }
   .decor-star { top: 22px; right: 10%; }
   .decor-sparkle { right: 1%; bottom: 84px; }
   .hero-bottom { bottom: 17px; }
