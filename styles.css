@@ -245,6 +245,9 @@ h1 span { color: var(--purple-dark); }
 .story-weekly li { padding: 5px 0; }
 .story-weekly > p:last-child { margin: 0; color: #625c68; font-size: 15px; line-height: 1.8; }
 
+.button-story { border-color: #d9cbe7; background: #fff; color: #624783; }
+.button-story:hover { background: #f7f1fc; }
+
 @media (max-width: 900px) {
   .header-inner { min-height: 67px; flex-wrap: wrap; gap: 0 18px; padding-block: 8px; }
   .primary-nav { justify-content: flex-start; gap: 0 17px; }

@@ -5,6 +5,14 @@
   const tabPanels = navLinks
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
+  const storyLink = document.querySelector('[data-story-link]');
+
+  if (storyLink) {
+    storyLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      activateTab('story', true);
+    });
+  }
 
   if (siteUrl) {
     siteUrl.href = window.location.href.split('#')[0];
@@ -58,7 +66,7 @@
   updateBackToTop();
   const initialId = tabPanels.some((panel) => panel.id === location.hash.slice(1))
     ? location.hash.slice(1)
-    : 'about';
+    : 'story';
   activateTab(initialId);
 
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
