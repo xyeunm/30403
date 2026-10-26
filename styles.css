@@ -33,9 +33,9 @@ h1, h2, h3, h4, p, blockquote { margin-top: 0; }
   .primary-nav a { padding: 8px 0; color: #625d69; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: color .2s ease; }
 .primary-nav a:hover, .primary-nav a.is-active, .text-link:hover { color: var(--purple); }
 .primary-nav a.is-active { border-bottom: 3px solid #624783; color: #624783; }
-.stage-tabs { display: inline-flex; flex: 0 0 auto; gap: 3px; padding: 4px; border: 1px solid #e5dcec; border-radius: 999px; background: #f8f5fb; }
-.stage-tab { min-height: 38px; padding: 0 15px; border: 0; border-radius: 999px; background: transparent; color: #746d7b; font: 700 13px "Noto Sans KR", sans-serif; cursor: pointer; }
-.stage-tab.is-active { background: #624783; color: #fff; box-shadow: 0 4px 12px rgba(98,71,131,.18); }
+.stage-tabs { position: sticky; z-index: 19; top: 72px; display: flex; width: 100%; justify-content: center; gap: 8px; padding: 12px 24px; border-bottom: 1px solid #ded4e8; background: rgba(248,245,251,.96); backdrop-filter: blur(14px); }
+.stage-tab { min-height: 46px; min-width: 190px; padding: 0 24px; border: 1px solid #d8cbe6; border-radius: 8px; background: #fff; color: #624783; font: 800 15px "Noto Sans KR", sans-serif; cursor: pointer; box-shadow: 0 4px 14px rgba(76,57,95,.06); }
+.stage-tab.is-active { border-color: #624783; background: #624783; color: #fff; box-shadow: 0 7px 18px rgba(98,71,131,.22); }
 .university-portfolio { min-height: 670px; padding-block: 90px; }
 .university-heading { text-align: center; }
 .university-placeholder { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
@@ -158,14 +158,6 @@ h1 span { color: var(--purple-dark); }
 .award-card h3 { margin-bottom: 10px; font-size: 16px; }
 .award-card ul { margin: 0; padding-left: 17px; color: #625c68; font-size: 12px; line-height: 1.85; }
 .award-skills { display: inline-block; margin: 13px 0 0; padding: 5px 9px; border-radius: 7px; background: #f5f2f8; color: #776b82; font-size: 10px; }
-.education-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.education-card { display: flex; align-items: flex-start; gap: 17px; padding: 24px; border: 1px solid #e9e3ef; border-radius: 20px; background: #fff; }
-.education-card-blue { border-color: #dcebf5; background: #fbfdff; }
-.education-card > span { display: grid; flex: 0 0 auto; width: 48px; height: 48px; place-items: center; border-radius: 16px; background: #f0e8f8; font-size: 22px; }
-.education-card-blue > span { background: #e8f4fb; }
-.education-card .mini-label { margin: 0 0 5px; }
-.education-card h3 { margin: 0 0 4px; font-size: 15px; line-height: 1.6; }
-.education-card p:last-child { margin: 0; color: var(--muted); font-size: 12px; }
 .contact-section { display: grid; grid-template-columns: 1fr .9fr; gap: 65px; align-items: center; padding-block: 82px; }
 .contact-copy h2 { margin: 0 0 12px; }
 .contact-copy > p:not(.section-kicker) { max-width: 520px; margin-bottom: 21px; color: #625c68; font-size: 13px; line-height: 1.9; }
@@ -216,8 +208,6 @@ h1 span { color: var(--purple-dark); }
 .tech-card p, .cert-strip span, .cert-strip strong { font-size: 15px; }
 .award-card h3 { font-size: 19px; }
 .award-card ul, .award-skills { font-size: 15px; }
-.education-card h3 { font-size: 18px; }
-.education-card p:last-child { font-size: 15px; }
 .contact-copy > p:not(.section-kicker) { font-size: 16px; line-height: 1.7; }
 .contact-details dt, .contact-details dd { font-size: 15px; }
 
@@ -261,8 +251,7 @@ h1 span { color: var(--purple-dark); }
 @media (max-width: 900px) {
   .header-inner { min-height: 67px; flex-wrap: wrap; gap: 8px 18px; padding-block: 8px; }
   .primary-nav { justify-content: flex-start; gap: 0 17px; }
-  .stage-tabs { order: 3; width: 100%; }
-  .stage-tab { flex: 1; }
+  .stage-tabs { top: 67px; }
   .hero { min-height: 570px; gap: 38px; }
   .hero-card { padding-inline: 27px; }
   .strength-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
@@ -276,8 +265,8 @@ h1 span { color: var(--purple-dark); }
   .header-inner { align-items: flex-start; }
   .wordmark { padding-block: 4px; }
   .primary-nav { width: 100%; flex-wrap: nowrap; justify-content: flex-start; gap: 19px; overflow-x: auto; padding: 3px 0 7px; scrollbar-width: thin; }
-  .stage-tabs { margin-top: 4px; }
-  .stage-tab { padding-inline: 10px; }
+  .stage-tabs { top: 67px; gap: 6px; padding: 9px 18px; }
+  .stage-tab { min-width: 0; flex: 1; min-height: 44px; padding-inline: 8px; font-size: 14px; }
   .university-placeholder { grid-template-columns: 1fr; }
   .university-placeholder article { min-height: 190px; }
   .university-placeholder-number { margin-bottom: 24px; }
@@ -303,7 +292,7 @@ h1 span { color: var(--purple-dark); }
   .section-heading { margin-bottom: 26px; }
   .section-heading h2, .contact-copy h2 { font-size: 28px; }
   .section-intro { font-size: 15px; }
-  .about-grid, .experience-grid, .activity-details, .club-grid, .award-grid, .education-grid, .contact-section { grid-template-columns: 1fr; }
+  .about-grid, .experience-grid, .activity-details, .club-grid, .award-grid, .contact-section { grid-template-columns: 1fr; }
   .info-card, .activity-feature { padding: 22px; }
   .strength-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 9px; }
   .strength-card { min-height: 165px; padding: 15px; }
@@ -337,7 +326,7 @@ h1 span { color: var(--purple-dark); }
   .hero { min-height: 0; grid-template-columns: 1.1fr .9fr; gap: 20px; padding-block: 8px 26px; }
   .hero::before { right: 0; left: 0; width: 100%; transform: none; }
   .hero-bottom, .decor { display: none; }
-  .hero-card, .info-card, .strength-card, .experience-card, .activity-feature, .club-card, .tech-card, .award-card, .education-card, .contact-details { break-inside: avoid; box-shadow: none; }
+  .hero-card, .info-card, .strength-card, .experience-card, .activity-feature, .club-card, .tech-card, .award-card, .contact-details { break-inside: avoid; box-shadow: none; }
   .content-section, .growth-section, .contact-section { padding-block: 24px; }
   .section-tint, .site-footer { background: #fff; }
   .experience-grid, .strength-grid, .tech-grid { gap: 7px; }
