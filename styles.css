@@ -33,6 +33,16 @@ h1, h2, h3, h4, p, blockquote { margin-top: 0; }
   .primary-nav a { padding: 8px 0; color: #625d69; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: color .2s ease; }
 .primary-nav a:hover, .primary-nav a.is-active, .text-link:hover { color: var(--purple); }
 .primary-nav a.is-active { border-bottom: 3px solid #624783; color: #624783; }
+.stage-tabs { display: inline-flex; flex: 0 0 auto; gap: 3px; padding: 4px; border: 1px solid #e5dcec; border-radius: 999px; background: #f8f5fb; }
+.stage-tab { min-height: 38px; padding: 0 15px; border: 0; border-radius: 999px; background: transparent; color: #746d7b; font: 700 13px "Noto Sans KR", sans-serif; cursor: pointer; }
+.stage-tab.is-active { background: #624783; color: #fff; box-shadow: 0 4px 12px rgba(98,71,131,.18); }
+.university-portfolio { min-height: 670px; padding-block: 90px; }
+.university-heading { text-align: center; }
+.university-placeholder { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+.university-placeholder article { min-height: 240px; padding: 28px; border: 1px solid #e5ddec; border-radius: 8px; background: linear-gradient(145deg, #fff, #fbf8fd); }
+.university-placeholder-number { display: block; margin-bottom: 40px; color: #9a79b3; font: 800 12px "Trebuchet MS", sans-serif; }
+.university-placeholder h3 { margin-bottom: 10px; font-size: 19px; }
+.university-placeholder p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.75; }
 .tab-panel:not([hidden]) { animation: rise-in .32s ease-out both; }
 .hero { position: relative; display: grid; min-height: 610px; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 70px; padding-block: 78px 104px; isolation: isolate; }
 .hero::before { position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: radial-gradient(ellipse at 12% 15%, rgba(255,255,255,.9), transparent 36%), radial-gradient(ellipse at 83% 85%, rgba(217,236,250,.76), transparent 31%), linear-gradient(125deg, #f2eafa 0%, #e9ddf8 48%, #f8f4fc 100%); content: ""; }
@@ -249,8 +259,10 @@ h1 span { color: var(--purple-dark); }
 .button-story:hover { background: #f7f1fc; }
 
 @media (max-width: 900px) {
-  .header-inner { min-height: 67px; flex-wrap: wrap; gap: 0 18px; padding-block: 8px; }
+  .header-inner { min-height: 67px; flex-wrap: wrap; gap: 8px 18px; padding-block: 8px; }
   .primary-nav { justify-content: flex-start; gap: 0 17px; }
+  .stage-tabs { order: 3; width: 100%; }
+  .stage-tab { flex: 1; }
   .hero { min-height: 570px; gap: 38px; }
   .hero-card { padding-inline: 27px; }
   .strength-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
@@ -264,6 +276,11 @@ h1 span { color: var(--purple-dark); }
   .header-inner { align-items: flex-start; }
   .wordmark { padding-block: 4px; }
   .primary-nav { width: 100%; flex-wrap: nowrap; justify-content: flex-start; gap: 19px; overflow-x: auto; padding: 3px 0 7px; scrollbar-width: thin; }
+  .stage-tabs { margin-top: 4px; }
+  .stage-tab { padding-inline: 10px; }
+  .university-placeholder { grid-template-columns: 1fr; }
+  .university-placeholder article { min-height: 190px; }
+  .university-placeholder-number { margin-bottom: 24px; }
   .primary-nav a { font-size: 13px; }
   .story-wrap { max-width: none; }
   .story-heading { margin-bottom: 30px; }

@@ -6,6 +6,30 @@
     .map((link) => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
   const storyLink = document.querySelector('[data-story-link]');
+  const stageButtons = [...document.querySelectorAll('[data-stage]')];
+  const highschoolPortfolio = document.getElementById('highschool-portfolio');
+  const universityPortfolio = document.getElementById('university-portfolio');
+
+  const activateStage = (stage, updateHistory = false) => {
+    const isUniversity = stage === 'university';
+    highschoolPortfolio.hidden = isUniversity;
+    universityPortfolio.hidden = !isUniversity;
+
+    stageButtons.forEach((button) => {
+      const isActive = button.dataset.stage === stage;
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-selected', String(isActive));
+      button.tabIndex = isActive ? 0 : -1;
+    });
+
+    document.querySelector('.primary-nav').hidden = isUniversity;
+    if (updateHistory) history.replaceState(null, '', isUniversity ? '#university' : '#home');
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  };
+
+  stageButtons.forEach((button) => {
+    button.addEventListener('click', () => activateStage(button.dataset.stage, true));
+  });
 
   if (storyLink) {
     storyLink.addEventListener('click', (event) => {
@@ -68,6 +92,7 @@
     ? location.hash.slice(1)
     : 'story';
   activateTab(initialId);
+  activateStage(location.hash === '#university' ? 'university' : 'highschool');
 
   if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
