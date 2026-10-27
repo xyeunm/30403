@@ -33,7 +33,7 @@ h1, h2, h3, h4, p, blockquote { margin-top: 0; }
   .primary-nav a { padding: 8px 0; color: #625d69; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: color .2s ease; }
 .primary-nav a:hover, .primary-nav a.is-active, .text-link:hover { color: var(--purple); }
 .primary-nav a.is-active { border-bottom: 3px solid #624783; color: #624783; }
-.stage-tabs { position: sticky; z-index: 19; top: 72px; display: flex; width: 100%; justify-content: center; gap: 8px; padding: 12px 24px; border-bottom: 1px solid #ded4e8; background: rgba(248,245,251,.96); backdrop-filter: blur(14px); }
+.stage-tabs { display: flex; width: 100%; justify-content: flex-start; gap: 8px; margin-bottom: 23px; }
 .stage-tab { min-height: 46px; min-width: 190px; padding: 0 24px; border: 1px solid #d8cbe6; border-radius: 8px; background: #fff; color: #624783; font: 800 15px "Noto Sans KR", sans-serif; cursor: pointer; box-shadow: 0 4px 14px rgba(76,57,95,.06); }
 .stage-tab.is-active { border-color: #624783; background: #624783; color: #fff; box-shadow: 0 7px 18px rgba(98,71,131,.22); }
 .university-portfolio { min-height: 670px; padding-block: 90px; }
@@ -253,7 +253,6 @@ h1 span { color: var(--purple-dark); }
 @media (max-width: 900px) {
   .header-inner { min-height: 67px; flex-wrap: wrap; gap: 8px 18px; padding-block: 8px; }
   .primary-nav { justify-content: flex-start; gap: 0 17px; }
-  .stage-tabs { top: 67px; }
   .hero { min-height: 570px; gap: 38px; }
   .hero-card { padding-inline: 27px; }
   .strength-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
@@ -267,7 +266,7 @@ h1 span { color: var(--purple-dark); }
   .header-inner { align-items: flex-start; }
   .wordmark { padding-block: 4px; }
   .primary-nav { width: 100%; flex-wrap: nowrap; justify-content: flex-start; gap: 19px; overflow-x: auto; padding: 3px 0 7px; scrollbar-width: thin; }
-  .stage-tabs { top: 67px; gap: 6px; padding: 9px 18px; }
+  .stage-tabs { gap: 6px; }
   .stage-tab { min-width: 0; flex: 1; min-height: 44px; padding-inline: 8px; font-size: 14px; }
   .university-placeholder { grid-template-columns: 1fr; }
   .university-placeholder article { min-height: 190px; }
