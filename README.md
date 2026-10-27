@@ -10,7 +10,7 @@
 python3 -m http.server 8000
 ```
 
-개발 컨테이너에서는 Streamlit 앱이 포트 `8000`에서 자동으로 실행되며, 해당 포트가 미리보기로 전달됩니다. 정적 사이트 서버와 Streamlit 앱을 동시에 실행하면 포트가 겹치므로 둘 중 하나만 실행하세요.
+개발 컨테이너에서는 Streamlit 앱이 포트 `8501`에서 자동으로 실행되며, 해당 포트가 미리보기로 전달됩니다. 로컬에서 직접 실행하려면 `streamlit run streamlit_app.py --server.port 8501` 명령을 사용하세요. 정적 사이트 서버와 Streamlit 앱을 동시에 실행하면 포트가 겹치므로 둘 중 하나만 실행하세요.
 
 ## GitHub Pages 배포
 
