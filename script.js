@@ -5,24 +5,11 @@
   const stageButtons = [...document.querySelectorAll('[data-stage]')];
   const highschoolPortfolio = document.getElementById('highschool-portfolio');
   const universityPortfolio = document.getElementById('university-portfolio');
-  const portfolioSidebar = document.querySelector('.portfolio-sidebar');
-  const portfolioLinks = [...document.querySelectorAll('[data-portfolio-link]')];
-
-  const activatePortfolioLink = (sectionId) => {
-    portfolioLinks.forEach((link) => {
-      const isActive = link.dataset.portfolioLink === sectionId;
-      link.classList.toggle('is-active', isActive);
-      if (isActive) link.setAttribute('aria-current', 'location');
-      else link.removeAttribute('aria-current');
-    });
-  };
 
   const activateStage = (stage, updateHistory = false) => {
     const isUniversity = stage === 'university';
     highschoolPortfolio.hidden = isUniversity;
     universityPortfolio.hidden = !isUniversity;
-    portfolioSidebar.hidden = isUniversity;
-    document.body.classList.toggle('has-portfolio-sidebar', !isUniversity);
 
     stageButtons.forEach((button) => {
       const isActive = button.dataset.stage === stage;
@@ -38,21 +25,6 @@
   stageButtons.forEach((button) => {
     button.addEventListener('click', () => activateStage(button.dataset.stage, true));
   });
-
-  portfolioLinks.forEach((link) => {
-    link.addEventListener('click', () => activatePortfolioLink(link.dataset.portfolioLink));
-  });
-
-  const portfolioSections = portfolioLinks
-    .map((link) => document.getElementById(link.dataset.portfolioLink))
-    .filter(Boolean);
-  if ('IntersectionObserver' in window) {
-    const portfolioObserver = new IntersectionObserver((entries) => {
-      const visibleSection = entries.find((entry) => entry.isIntersecting);
-      if (visibleSection) activatePortfolioLink(visibleSection.target.id);
-    }, { rootMargin: '-20% 0px -70% 0px' });
-    portfolioSections.forEach((section) => portfolioObserver.observe(section));
-  }
 
   if (storyLink) {
     storyLink.addEventListener('click', (event) => {
